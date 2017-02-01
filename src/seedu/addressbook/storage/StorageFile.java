@@ -19,6 +19,7 @@ import java.io.Reader;
 import java.io.Writer;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.Files;
 
 /**
  * Represents the file used to store address book data.
@@ -151,6 +152,13 @@ public class StorageFile {
 
     public String getPath() {
         return path.toString();
+    }
+    
+    public void fileExist() throws FileNotFoundException{
+        Path path = Paths.get(DEFAULT_STORAGE_FILEPATH);
+        if (!Files.exists(path)){
+            throw new FileNotFoundException("Storage file not found");
+        }
     }
 
 }
