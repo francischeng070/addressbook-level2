@@ -55,6 +55,9 @@ public class Person implements ReadOnlyPerson {
         return email;
     }
 
+    public int getSequenceNumber() {
+        return sequenceNumber;
+    }
     @Override
     public Address getAddress() {
         return address;
